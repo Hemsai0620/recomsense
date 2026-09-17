@@ -1,0 +1,35 @@
+# Virtual environments and local tooling
+.venv/
+venv/
+env/
+.python-version
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Version control and editors
+.git/
+.gitignore
+.github/
+.vscode/
+.idea/
+
+# Secrets and local overrides
+.env
+.env.*
+!.env.example
+
+# Trained artifacts: the image rebuilds them during the build stage
+artifacts/
+
+# Docs and tests are not needed inside the runtime image
+README.md
+tests/
+
+# Notebooks and logs
+.ipynb_checkpoints/
+*.log

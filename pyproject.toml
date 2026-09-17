@@ -1,0 +1,11 @@
+[project]
+name = "recomsense"
+version = "1.0.0"
+description = "Personalized product recommendations from user-product interaction history."
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q --strict-markers"
+filterwarnings = ["ignore::RuntimeWarning:implicit.*"]

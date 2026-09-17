@@ -1,0 +1,43 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Secrets and local configuration - never commit real credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.json
+credentials.json
+
+# Trained model artifacts (regenerate with: python -m model.trainer)
+artifacts/*
+!artifacts/.gitkeep
+*.pkl
+
+# Packaging / distribution
+build/
+dist/
+*.egg-info/
+
+# Notebooks, logs, OS noise
+.ipynb_checkpoints/
+*.log
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
