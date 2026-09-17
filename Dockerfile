@@ -13,6 +13,13 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
+# implicit's compiled ALS extension links against the GNU OpenMP runtime, which
+# the slim base image does not ship. Without libgomp1 the import fails with
+# "libgomp.so.1: cannot open shared object file".
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
 # Dependencies first so code edits do not invalidate the pip layer.
 COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
